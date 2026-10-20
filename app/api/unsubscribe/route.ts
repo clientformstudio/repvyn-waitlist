@@ -1,0 +1,2 @@
+import {database,json,readBody,getToken,failure} from '../helpers';
+export async function POST(request:Request){try{await readBody(request);const token=getToken(request);if(!token)return json({error:'Please use the device you joined on.'},401);const result=await database().prepare('UPDATE waitlist SET unsubscribed_at=? WHERE manage_token=? AND unsubscribed_at IS NULL').bind(Date.now(),token).run();if(!result.meta.changes)return json({error:'This signup is no longer active.'},400);return json({ok:true});}catch(error){return failure(error);}}
