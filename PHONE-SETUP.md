@@ -22,8 +22,10 @@ No terminal or Node.js installation on your phone is needed. Cloudflare runs the
 | Worker/project name | `repvyn-waitlist` |
 | Production branch | `main` |
 | Root directory | repository root `/` |
-| Build command | `npm run cloudflare:build` |
-| Deploy command | `npm run cloudflare:publish` |
+| Build command | `npm run build` |
+| Deploy command | `npx wrangler deploy` |
+
+The default Cloudflare commands above are supported. The build configures the database binding, and Wrangler automatically uses the generated Worker configuration. The previous `cloudflare:build` and `cloudflare:publish` aliases also work.
 
 5. Under **Build variables and secrets**, add a plain build variable named **REPVYN_DATABASE_ID**, with the Database ID you copied in step 1 as its value. This must be available during the build, rather than only as a runtime variable. The build writes the database binding for you.
 6. Turn off non-production branch builds/preview builds for now. This setup targets one production database.
