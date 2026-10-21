@@ -1,262 +1,673 @@
-/* Proposed experience: mobile first, with editable text and components. */
+/* Photo-led concept preview, stacked for phones. */
+.preview-wrap {
+  margin:0;
+  width:100%;
+  background:#eeeee5
+}
+.concept-card {
+  position:relative;
+  max-width:1600px;
+  margin:auto;
+  overflow:hidden
+}
+.preview-heading {
+  padding:25px 22px 21px;
+  background:#f2f4e9
+}
+.preview-heading h2 {
+  font-size:33px;
+  line-height:1.15;
+  letter-spacing:-1.4px;
+  margin:14px 0 7px;
+  font-weight:800
+}
+.preview-heading>p {
+  font-size:17px;
+  line-height:1.5;
+  margin:0 0 5px;
+  color:#505b55
+}
+.preview-heading small {
+  font-size:12px
+}
+.preview-photo {
+  height:245px;
+  overflow:hidden
+}
+.preview-photo img {
+  display:block;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  object-position:65% 53%
+}
+.preview-controls {
+  position:relative;
+  background:#fff;
+  margin:-16px 16px 0;
+  padding:18px 16px;
+  border-radius:12px;
+  box-shadow:0 7px 25px #17201d0c
+}
+.workout-summary,.check-in {
+  display:flex;
+  gap:11px;
+  align-items:center;
+  min-width:0
+}
+.preview-controls h3 {
+  font-size:13px;
+  line-height:1.5;
+  margin:0 0 3px;
+  font-weight:800
+}
+.preview-controls p {
+  font-size:11px;
+  line-height:1.7;
+  margin:0;
+  color:var(--muted)
+}
+.check-in {
+  border-top:1px solid var(--line);
+  padding-top:14px;
+  margin-top:14px
+}
+.check-in-options {
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:8px;
+  margin-top:16px
+}
+.check-in-options button {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:7px;
+  border:1px solid #e5e9dd;
+  background:#f7f8f1;
+  border-radius:7px;
+  min-height:52px;
+  font-size:11px;
+  line-height:1.5;
+  padding:8px
+}
+.check-in-options svg {
+  color:#8eb51a;
+  width:22px;
+  height:22px
+}
+.check-in-options button:hover,.check-in-options button[aria-pressed=true] {
+  background:#edf6cf;
+  border-color:#b2cf64
+}
+.demo-response {
+  font-size:11px;
+  color:#4e584f;
+  text-align:center;
+  line-height:1.7;
+  margin:0;
+  padding:17px 22px;
+  min-height:53px
+}
+/* Relatable situations and benefits, with editorial rows instead of cards. */
 .proposed-experience {
-  margin-top: 44px;
-  padding-top: 34px;
-  border-top: 1px solid var(--line);
+  background:var(--ink);
+  color:var(--ivory);
+  padding:34px 22px 28px
 }
-.proposed-experience .eyebrow { margin-bottom: 18px; }
-.proposed-experience h2 {
-  margin: 0;
-  font-size: clamp(29px, 8.5vw, 40px);
-  line-height: 1.12;
-  letter-spacing: -1.5px;
-  font-weight: 800;
+.section-inner {
+  max-width:1120px;
+  margin:auto
 }
-.experience-intro {
-  margin: 15px 0 23px;
-  font-size: 15px;
-  line-height: 1.6;
-  color: var(--muted);
+.customer-story h2 {
+  font-size:30px;
+  line-height:1.2;
+  letter-spacing:-1.1px;
+  margin:0 0 17px;
+  font-weight:800;
+  text-wrap:balance
 }
-.experience-grid { display: grid; gap: 24px; }
-.experience-grid > * { min-width: 0; }
-.experience-steps { list-style: none; padding: 0; margin: 0; }
+.customer-story h2 span {
+  color:var(--lime)
+}
+.customer-story>p {
+  font-size:15px;
+  line-height:1.7;
+  color:#e0e5e4;
+  margin:15px 0
+}
+.illustrative-thoughts {
+  padding:0;
+  margin:17px 0;
+  list-style:none;
+  display:grid;
+  gap:8px
+}
+.illustrative-thoughts li {
+  background:#233038;
+  padding:13px 15px;
+  border-radius:7px;
+  font-size:14px;
+  line-height:1.6;
+  color:#f2f5ee
+}
+.experience-steps {
+  list-style:none;
+  padding:0;
+  margin:24px 0
+}
 .experience-steps li {
-  display: flex;
-  align-items: flex-start;
-  gap: 14px;
-  padding: 19px 0;
-  border-bottom: 1px solid var(--line);
+  display:flex;
+  align-items:flex-start;
+  gap:16px;
+  padding:20px 0;
+  border-top:1px solid #536065
 }
-.experience-steps li:first-child { padding-top: 0; }
-.experience-steps li:last-child { padding-bottom: 0; border-bottom: 0; }
 .step-number {
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  width: 43px;
-  height: 43px;
-  border-radius: 50% 50% 50% 14px;
-  background: var(--pale);
-  font-weight: 800;
-  font-size: 14px;
+  font-size:22px;
+  color:var(--lime);
+  font-weight:800;
+  line-height:1.3;
+  flex-shrink:0;
+  width:33px
 }
 .experience-steps h3 {
-  font-size: 16px;
-  letter-spacing: -.4px;
-  line-height: 1.4;
-  margin: 0 0 5px;
-  font-weight: 800;
+  font-size:18px;
+  line-height:1.3;
+  margin:0 0 10px;
+  letter-spacing:-.4px;
+  font-weight:800
 }
 .experience-steps p {
-  font-size: 14px;
-  line-height: 1.65;
-  color: var(--muted);
-  margin: 0;
+  font-size:14px;
+  line-height:1.7;
+  color:#e0e5e4;
+  margin:0
 }
 .conversation-concept {
-  margin: 0;
-  padding: 21px 17px 17px;
-  border: 1px solid #e5ecd6;
-  border-radius: 13px;
-  background: #f1f6e4;
-  align-self: center;
+  background:var(--ivory);
+  color:var(--ink);
+  border-radius:11px;
+  padding:20px 16px 16px;
+  margin:3px 0 0
 }
 .conversation-concept .concept-label {
-  display: inline-block;
-  background: #e9f2d0;
-  font-size: 9px;
-  margin-bottom: 18px;
+  padding:0;
+  background:none;
+  color:#646b67;
+  font-size:9px;
+  letter-spacing:1.7px;
+  margin:0 0 17px
 }
-.concept-message { display: flex; gap: 9px; align-items: flex-start; }
-.concept-message + .concept-message { margin-top: 13px; }
+.concept-message {
+  display:flex;
+  gap:9px;
+  align-items:flex-start;
+  background:white;
+  border:1px solid #e4e8de;
+  padding:13px 11px;
+  border-radius:12px 12px 12px 2px
+}
+.concept-message+.concept-message {
+  margin-top:12px
+}
 .message-avatar {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 33px;
-  height: 37px;
-  border-radius: 13px;
-  background: #ffffffa8;
-  flex-shrink: 0;
+  display:grid;
+  place-items:center;
+  width:30px;
+  height:33px;
+  border-radius:50%;
+  background:#f3f5ec;
+  flex-shrink:0
 }
-.message-avatar > svg { height: 20px; width: 20px; }
-.message-avatar .mini-mark { transform: scale(.8); }
+.message-avatar>svg {
+  width:22px;
+  height:22px
+}
+.message-avatar .mini-mark {
+  transform:scale(.8)
+}
 .concept-message blockquote {
-  background: white;
-  border-radius: 12px 12px 12px 2px;
-  font-size: 13px;
-  line-height: 1.65;
-  margin: 0;
-  padding: 12px 13px;
-  min-width: 0;
+  margin:0;
+  min-width:0
 }
-.concept-message.reply blockquote { background: #e3efbe; }
+.message-sender {
+  font-size:11px;
+  font-weight:800;
+  display:block;
+  margin:0 0 4px
+}
+.concept-message blockquote p {
+  font-size:13px;
+  line-height:1.65;
+  margin:0
+}
+.concept-message.reply {
+  background:#e0f59d;
+  border-color:#e0f59d;
+  border-radius:12px 12px 2px 12px
+}
+.concept-message.reply .message-avatar {
+  background:#d3ed7d
+}
 .concept-disclaimer {
-  margin: 16px 0 0;
-  font-size: 11px;
-  line-height: 1.7;
-  color: #69735f;
+  color:#606c60;
+  font-size:11px;
+  line-height:1.7;
+  margin:15px 0 0
 }
 .closing-invite {
-  padding: 26px 22px 20px;
-  margin-top: 27px;
-  border-radius: 13px;
-  background: var(--ink);
-  color: var(--ivory);
+  background:var(--lime);
+  padding:32px 22px 27px;
+  text-align:center
 }
 .closing-invite h2 {
-  font-size: 26px;
-  line-height: 1.2;
-  letter-spacing: -.8px;
-  font-weight: 800;
-  margin: 0 0 12px;
+  max-width:1000px;
+  margin:0 auto 17px;
+  font-size:30px;
+  line-height:1.2;
+  letter-spacing:-1.1px;
+  font-weight:800;
+  text-wrap:balance
 }
-.closing-invite > div > p { color: #dce2d4; font-size: 14px; line-height: 1.65; margin: 0; }
-.closing-action { margin-top: 21px; }
+.closing-invite>div>p {
+  max-width:930px;
+  font-size:15px;
+  line-height:1.7;
+  margin:0 auto 10px
+}
+.closing-action {
+  margin:22px auto 0;
+  max-width:360px
+}
 .closing-action .join-button {
-  width: 100%;
-  min-height: 56px;
-  font-size: 14px;
-  color: var(--ink);
-  justify-content: space-between;
-  gap: 10px;
-  padding-inline: 17px;
-  white-space: normal;
+  width:100%
 }
-.closing-invite .closing-action > p {
-  font-size: 11px;
-  text-align: center;
-  margin: 10px 0 0;
+.closing-action>p {
+  font-size:11px;
+  margin:10px 0 0;
+  line-height:1.7
 }
-.site-footer { align-items: flex-start; gap: 12px; margin-top: 25px; padding-block: 23px 20px; }
-.site-footer .footer-brand { flex-direction: column; gap: 9px; align-items: flex-start; }
-.site-footer .footer-brand .logo { width: 137px; }
-.site-footer .footer-brand p { font-size: 12px; color: #69735f; font-weight: 400; line-height: 1.6; }
-.site-footer .footer-controls { gap: 20px; font-size: 11px; }
-.site-footer .text-button { font-size: 12px; min-height: 44px; }
-#signup { scroll-margin-block: 30px; }
-.confirmation { padding: 20px 17px 12px; }
-.confirmation-heading p { font-size: 13px; }
-.interest { margin-top: 21px; }
-.interest legend { font-size: 15px; line-height: 1.5; font-weight: 800; padding: 0; }
-.interest #interest-note { font-size: 12px; line-height: 1.6; margin: 7px 0 14px; }
-.interest-options { display: grid; gap: 8px; }
-.interest-options button {
-  width: 100%;
-  min-height: 56px;
-  padding: 13px 14px;
-  border-radius: 8px;
-  text-align: left;
-  font-size: 13px;
-  line-height: 1.55;
-  font-weight: 600;
-  overflow-wrap: anywhere;
-  transition: background .15s, border-color .15s;
+.site-footer {
+  background:var(--ink);
+  color:#e3e8e5;
+  padding:25px 22px 20px;
+  display:flex;
+  flex-direction:column;
+  gap:16px
 }
-.interest-options button:disabled { opacity: .6; }
-.skip-interest { font-size: 12px; min-height: 44px; }
-.unsubscribe { display: block; font-size: 11px; min-height: 44px; margin-top: 2px; }
-.answer-thanks { font-size: 13px; line-height: 1.7; align-items: flex-start; }
-.answer-thanks svg { flex-shrink: 0; margin-top: 2px; }
-.answer-saving { display: flex; align-items: center; gap: 8px; font-size: 12px; line-height: 1.6; }
-.skip-confirmation { font-size: 12px; color: #637054; line-height: 1.7; }
-
-@media (min-width: 600px) {
-  .proposed-experience { margin-top: 55px; padding-top: 40px; }
-  .experience-intro { font-size: 16px; }
-  .experience-steps li { gap: 20px; padding-block: 23px; }
-  .experience-steps h3 { font-size: 19px; }
-  .step-number { width: 49px; height: 49px; }
-  .conversation-concept { padding: 26px; }
-  .concept-message { gap: 13px; }
-  .concept-message blockquote { font-size: 15px; padding: 15px 18px; }
-  .message-avatar { width: 42px; height: 42px; }
-  .closing-invite { padding: 32px; }
-  .closing-invite h2 { font-size: 31px; }
-  .closing-action .join-button { justify-content: center; gap: 25px; }
-  .site-footer { flex-direction: row; align-items: flex-end; }
-  .site-footer .footer-controls { align-items: center; }
+.footer-brand .logo {
+  width:145px;
+  position:relative
 }
-@media (min-width: 960px) {
-  .proposed-experience { margin-top: 75px; padding-top: 48px; }
-  .proposed-experience h2 { font-size: 51px; letter-spacing: -2px; line-height: 1.1; }
-  .experience-intro { margin: 17px 0 30px; }
-  .experience-grid { grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 48px; align-items: center; }
-  .experience-steps h3 { font-size: 19px; }
-  .experience-steps li { padding-block: 22px; gap: 17px; }
-  .experience-steps p { font-size: 14px; }
-  .conversation-concept { padding: 27px; }
-  .conversation-concept .concept-label { margin-bottom: 23px; }
-  .concept-message blockquote { font-size: 14px; padding: 13px 15px; }
-  .concept-message + .concept-message { margin-top: 17px; }
-  .concept-disclaimer { margin-top: 23px; }
-  .closing-invite { display: grid; grid-template-columns: minmax(0,1fr) 330px; gap: 35px; align-items: center; margin-top: 42px; padding: 35px; }
-  .closing-invite h2 { font-size: 30px; max-width: 590px; margin-bottom: 12px; }
-  .closing-invite > div > p { font-size: 14px; }
-  .closing-action { margin-top: 0; }
-  .site-footer { margin-top: 30px; padding-top: 26px; padding-bottom: 25px; }
-  .site-footer .footer-brand .logo { width: 145px; }
-  .site-footer .footer-controls { font-size: 12px; gap: 28px; }
+.footer-brand .logo svg {
+  filter:grayscale(1) invert(1);
+  mix-blend-mode:screen
 }
-
-/* Customer-focused copy, with compact prose instead of extra cards. */
-.header { margin-bottom: 29px; }
-.hero-badge { display: inline-block; max-width: 100%; background: var(--pale); border: 1px solid #e4eccd; border-radius: 7px; padding: 8px 10px; margin: 0 0 20px; font-size: 9px; letter-spacing: .8px; line-height: 1.7; font-weight: 800; }
-#hero-title { font-size: clamp(34px, 9.6vw, 46px); line-height: 1.12; letter-spacing: -1.7px; margin-bottom: 22px; }
-.hero-story { color: #5d655f; font-size: 15px; line-height: 1.75; margin-bottom: 22px; max-width: 600px; }
-.hero-story p { margin: 0 0 12px; }
-.hero-story p:last-child { margin-bottom: 0; }
-.hero-story .hero-both { color: var(--ink); font-weight: 700; }
-.ai-note { align-items: flex-start; }
-.ai-note svg { margin-top: 3px; }
-.ai-note p { font-size: 13px; font-weight: 650; max-width: none; }
-.customer-price > p { font-size: 13px; color: #4f5b4b; line-height: 1.8; font-weight: 500; margin-bottom: 4px; }
-.customer-price strong { font-size: 22px; letter-spacing: -.7px; color: var(--ink); margin-inline: 2px; }
-.customer-price small { font-size: 11px; line-height: 1.7; }
-.customer-experience { display: grid; gap: 25px; margin-top: 34px; padding-top: 30px; }
-.customer-experience h2 { font-size: clamp(28px, 7.9vw, 37px); line-height: 1.16; letter-spacing: -1.25px; max-width: 590px; }
-.customer-story > p { font-size: 14px; color: var(--muted); line-height: 1.7; margin: 18px 0 0; }
-.illustrative-thoughts { list-style: none; padding: 1px 0 1px 14px; margin: 17px 0; border-left: 2px solid var(--lime); }
-.illustrative-thoughts li { font-size: 14px; line-height: 1.7; color: #3b4938; margin: 8px 0; }
-.customer-experience .experience-steps h3 { font-size: 15px; line-height: 1.5; }
-.customer-experience .experience-steps p { font-size: 13px; line-height: 1.75; }
-.customer-experience .experience-steps li { padding-block: 17px; gap: 12px; }
-.customer-experience .experience-steps li:first-child { padding-top: 0; }
-.customer-experience .experience-steps li:last-child { padding-bottom: 0; }
-.customer-experience .step-number { width: 37px; height: 37px; font-size: 12px; }
-.concept-message blockquote p { margin: 0; }
-.message-sender { display: block; font-size: 10px; font-weight: 800; margin-bottom: 4px; letter-spacing: .3px; }
-.closing-invite > div > p + p { margin-top: 12px; }
-.site-footer .footer-meta { display: flex; flex-direction: column; align-items: flex-start; gap: 3px; }
-.site-footer .footer-controls { display: flex; align-items: center; gap: 20px; }
-.site-footer .footer-concept-note { font-size: 10px; line-height: 1.6; color: #69735f; font-weight: 400; }
-@media (min-width: 600px) {
-  .hero-badge { font-size: 10px; }
-  .hero-story { font-size: 16px; }
-  .customer-experience .experience-steps h3 { font-size: 18px; }
-  .customer-experience .experience-steps p { font-size: 14px; }
-  .site-footer .footer-meta { align-items: flex-end; }
+.footer-logo-mark {
+  position:absolute;
+  inset:0 auto 0 0;
+  width:25%;
+  background:var(--ink);
+  display:flex;
+  align-items:center
 }
-@media (min-width: 960px) {
-  .header { margin-bottom: 39px; }
-  .main-grid { align-items: center; gap: 47px; }
-  #hero-title { font-size: clamp(44px, 4vw, 56px); line-height: 1.12; letter-spacing: -2.2px; }
-  .hero-story { font-size: 15px; line-height: 1.75; }
-  .hero-story p { margin-bottom: 12px; }
-  .ai-note { padding: 15px; margin-bottom: 20px; gap: 12px; }
-  .ai-note p { font-size: 13px; }
-  .customer-price { margin-bottom: 20px; }
-  .customer-experience { grid-template-columns: minmax(0,1fr) minmax(0,1fr); grid-template-areas: 'story benefits' 'conversation benefits'; column-gap: 48px; row-gap: 26px; align-items: start; margin-top: 52px; padding-top: 40px; }
-  .customer-story { grid-area: story; }
-  .customer-experience .experience-steps { grid-area: benefits; padding-top: 5px; }
-  .customer-experience .conversation-concept { grid-area: conversation; width: 100%; }
-  .customer-experience h2 { font-size: 39px; letter-spacing: -1.6px; }
-  .customer-story > p { font-size: 15px; }
-  .illustrative-thoughts li { font-size: 15px; }
-  .customer-experience .step-number { width: 43px; height: 43px; }
-  .customer-experience .experience-steps li { gap: 16px; padding-block: 24px; }
-  .customer-experience .experience-steps h3 { font-size: 18px; }
-  .closing-invite { margin-top: 34px; grid-template-columns: minmax(0,1fr) 330px; }
-  .closing-invite h2 { font-size: 29px; }
+.footer-logo-mark .mini-mark {
+  width:34px;
+  height:34px
+}
+.footer-logo-mark .mini-mark i {
+  width:15px;
+  height:18px;
+  top:16px
+}
+.footer-logo-mark .mini-mark i+i {
+  left:17px;
+  top:0
+}
+.footer-brand>p {
+  font-size:12px;
+  line-height:1.7;
+  margin:8px 0 0
+}
+.footer-meta {
+  display:flex;
+  flex-direction:column;
+  gap:4px
+}
+.footer-controls {
+  display:flex;
+  align-items:center;
+  gap:20px;
+  font-size:11px
+}
+.footer-controls .text-button {
+  font-size:12px
+}
+.footer-concept-note {
+  font-size:11px;
+  margin:0;
+  line-height:1.7;
+  color:#c1cbc6
+}
+@media(min-width:600px) {
+  .preview-heading {
+    text-align:center;
+    padding:28px
+  }
+  .preview-heading h2 {
+    font-size:39px
+  }
+  .preview-photo {
+    height:350px
+  }
+  .preview-controls {
+    margin:-30px 5% 0;
+    padding:20px;
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px
+  }
+  .check-in {
+    margin:0;
+    padding:0 0 0 18px;
+    border-top:0;
+    border-left:1px solid var(--line)
+  }
+  .check-in-options {
+    margin:0;
+    grid-column:1/-1
+  }
+  .preview-controls h3 {
+    font-size:14px
+  }
+  .preview-controls p {
+    font-size:12px
+  }
+  .check-in-options button {
+    font-size:13px
+  }
+  .proposed-experience {
+    padding:38px 5% 30px
+  }
+  .customer-story {
+    text-align:center
+  }
+  .customer-story h2 {
+    font-size:38px
+  }
+  .illustrative-thoughts {
+    grid-template-columns:repeat(3,1fr);
+    gap:14px
+  }
+  .illustrative-thoughts li {
+    display:grid;
+    align-content:center;
+    font-size:13px;
+    padding:17px 13px
+  }
+  .experience-steps li {
+    gap:24px;
+    padding:23px 0
+  }
+  .experience-steps h3 {
+    font-size:21px
+  }
+  .experience-steps p {
+    font-size:15px
+  }
+  .step-number {
+    width:50px;
+    font-size:26px
+  }
+  .conversation-concept {
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:15px;
+    padding:22px
+  }
+  .conversation-concept .concept-label {
+    grid-column:1/-1;
+    margin:0
+  }
+  .concept-message+.concept-message {
+    margin:0
+  }
+  .concept-disclaimer {
+    grid-column:1/-1;
+    text-align:center;
+    margin:0
+  }
+  .closing-invite {
+    padding:32px 5% 25px
+  }
+  .closing-invite h2 {
+    font-size:38px
+  }
+  .closing-invite>div>p {
+    font-size:16px
+  }
+  .site-footer {
+    padding:25px 5%;
+    flex-direction:row;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px
+  }
+  .footer-meta {
+    align-items:flex-end
+  }
+  .footer-concept-note {
+    text-align:right
+  }
+}
+@media(min-width:960px) {
+  .preview-wrap {
+    background:transparent
+  }
+  .concept-card {
+    border-radius:18px 18px 0 0;
+    min-height:430px;
+    padding:0 5% 4px
+  }
+  .preview-photo {
+    position:absolute;
+    inset:0;
+    height:100%;
+    z-index:0
+  }
+  .preview-photo img {
+    object-position:50% 24%
+  }
+  .preview-photo:after {
+    content:'';
+    position:absolute;
+    inset:0;
+    background:linear-gradient(90deg,#ffffff80 0%,#ffffff30 40%,transparent 65%),linear-gradient(0deg,#f9f5e799,transparent 30%)
+  }
+  .preview-heading {
+    text-align:left;
+    padding:46px 0 0;
+    position:relative;
+    z-index:1;
+    width:45%;
+    min-height:285px;
+    background:none
+  }
+  .preview-heading h2 {
+    font-size:44px;
+    margin-top:17px;
+    letter-spacing:-1.8px
+  }
+  .preview-heading>p {
+    font-size:20px;
+    margin-bottom:4px
+  }
+  .preview-heading small {
+    font-size:13px
+  }
+  .preview-controls {
+    margin:0;
+    z-index:1;
+    display:grid;
+    grid-template-columns:1.05fr 1.1fr 1.6fr;
+    gap:20px;
+    padding:18px 21px;
+    border-radius:13px
+  }
+  .preview-controls h3 {
+    font-size:13px
+  }
+  .preview-controls p {
+    font-size:11px
+  }
+  .preview-controls .people-icon {
+    width:42px;
+    height:42px
+  }
+  .check-in-options {
+    grid-column:auto;
+    gap:10px
+  }
+  .check-in-options button {
+    font-size:11px;
+    gap:10px
+  }
+  .demo-response {
+    position:relative;
+    z-index:1;
+    padding:17px 15px 12px;
+    min-height:47px;
+    color:#28362d
+  }
+  .proposed-experience {
+    padding-block:34px 30px
+  }
+  .customer-story h2 {
+    font-size:42px;
+    letter-spacing:-1.6px
+  }
+  .customer-story>p {
+    font-size:18px;
+    line-height:1.6;
+    margin:15px 0
+  }
+  .illustrative-thoughts {
+    margin:18px 0;
+    gap:22px
+  }
+  .illustrative-thoughts li {
+    font-size:15px;
+    min-height:64px
+  }
+  .experience-steps {
+    margin:23px 0 22px
+  }
+  .experience-steps li {
+    gap:25px;
+    padding:23px 10px;
+    align-items:center
+  }
+  .experience-steps li>div {
+    display:grid;
+    grid-template-columns:minmax(0,.9fr) minmax(0,1.5fr);
+    gap:30px;
+    align-items:center;
+    flex:1
+  }
+  .experience-steps h3 {
+    font-size:21px;
+    margin:0;
+    padding-right:20px
+  }
+  .experience-steps p {
+    border-left:1px solid #536065;
+    padding-left:30px;
+    font-size:15px;
+    line-height:1.6
+  }
+  .conversation-concept {
+    position:relative;
+    padding:28px 9% 17px;
+    column-gap:25px
+  }
+  .conversation-concept .concept-label {
+    position:absolute;
+    top:17px;
+    left:20px;
+    font-size:8px
+  }
+  .concept-message {
+    padding:12px 15px;
+    gap:12px
+  }
+  .concept-message blockquote p {
+    font-size:13px
+  }
+  .concept-disclaimer {
+    font-size:11px
+  }
+  .closing-invite h2 {
+    font-size:38px;
+    max-width:1100px;
+    margin-bottom:12px
+  }
+  .closing-invite>div>p {
+    margin-bottom:2px
+  }
+  .closing-action {
+    margin-top:17px;
+    max-width:290px
+  }
+  .closing-action .join-button {
+    min-height:54px
+  }
+  .site-footer .footer-meta {
+    flex-direction:row;
+    align-items:center;
+    gap:22px
+  }
+  .footer-concept-note {
+    text-align:left
+  }
+  .site-footer {
+    padding-block:25px
+  }
+  .footer-brand .logo {
+    width:160px
+  }
+}
+@media(max-width:359px) {
+  .offer {
+    padding-inline:18px
+  }
+  .hero-badge {
+    font-size:8px;
+    letter-spacing:.7px
+  }
+  .preview-heading {
+    padding-inline:18px
+  }
+  .preview-controls {
+    margin-inline:12px;
+    padding:15px 12px
+  }
+  .check-in-options {
+    grid-template-columns:1fr
+  }
+  .proposed-experience {
+    padding-inline:18px
+  }
+  .conversation-concept {
+    padding-inline:12px
+  }
+  .concept-message {
+    padding-inline:9px
+  }
+  .experience-steps li {
+    gap:12px
+  }
+  .closing-invite {
+    padding-inline:18px
+  }
 }

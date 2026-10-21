@@ -1,6 +1,6 @@
-export function Brand({className=''}:{className?:string}) {
+export function Brand({className='',onDark=false}:{className?:string;onDark?:boolean}) {
   return <a className={`logo ${className}`} href="/" aria-label="Repvyn home">
-    <svg viewBox="205 273 875 220" role="img" aria-label="repvyn"><image href="/brand.jpg" width="1280" height="853"/></svg>
+    <svg viewBox="205 273 875 220" role="img" aria-label="repvyn"><image href="/brand.jpg" width="1280" height="853"/></svg>{onDark&&<span className="footer-logo-mark"><BrandMark/></span>}
   </a>;
 }
 

@@ -1,6 +1,7 @@
 export function Icon({kind,className=''}:{kind:string;className?:string}) {
   return <svg className={className} width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.7" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    {kind==='arrow'?<path d="M5 12h14m-5-5 5 5-5 5"/>:
+    {kind==='workout'?<><path d="M7 9h10M7 15h10M4 7v10M7 5v14M17 5v14M20 7v10"/></>:
+      kind==='arrow'?<path d="M5 12h14m-5-5 5 5-5 5"/>:
       kind==='check'?<path d="m5 12 4 4L19 6"/>:
       kind==='heart'?<path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/>:
       kind==='person'?<><circle cx="12" cy="7" r="3"/><path d="M5 21v-2a7 7 0 0 1 14 0v2"/></>:

@@ -8,9 +8,9 @@ const steps = [
 ];
 
 export function ProposedExperience() {
-  return <section className="proposed-experience customer-experience" aria-labelledby="experience-title">
+  return <section className="proposed-experience customer-experience" aria-labelledby="experience-title"><div className="section-inner">
     <div className="customer-story">
-      <h2 id="experience-title">Started strong. Missed a few days. Now what?</h2>
+      <h2 id="experience-title">Started strong. Missed a few days. <span>Now what?</span></h2>
       <p>Have you ever opened a workout app and thought:</p>
       <ul className="illustrative-thoughts" aria-label="Illustrative workout situations">
         <li>‘I don’t have time for all this today.’</li>
@@ -31,5 +31,5 @@ export function ProposedExperience() {
         <div className="concept-message reply"><span className="message-avatar"><BrandMark/></span><blockquote><span className="message-sender">Repvyn</span><p>Let’s fit a shorter session into today.</p></blockquote></div>
         <p className="concept-disclaimer">Planned guidance based on information you provide.</p>
       </figure>
-  </section>;
+  </div></section>;
 }
