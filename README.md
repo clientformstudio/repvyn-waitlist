@@ -90,3 +90,7 @@ Existing signups on the ChatGPT Sites publication do not automatically move into
 ## Local development
 
 After configuring the database, run `npx wrangler d1 migrations apply repvyn-waitlist --local --persist-to .wrangler/state`, then `npm run dev`. Local and production databases are separate. For the built Worker, run `npm run build`, then `npm start`. Use `npm run cloudflare:export-emails -- --local` only when intentionally exporting local test data.
+
+## Optional interest question
+
+The post-signup question is “How interested are you in trying Repvyn?” It stores `very_interested`, `interested_need_more` or `just_exploring` in the existing `interest` column, with `interest_updated_at`. Historical `yes`, `maybe` and `no` values refer to the old price question and remain unchanged. No database migration is required for the new values because the column is already TEXT. Skip performs no write; an answer-save failure leaves the subscriber active and offers retry or skip.

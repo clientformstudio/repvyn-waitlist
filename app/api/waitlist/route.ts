@@ -6,6 +6,6 @@ export async function POST(request:Request){try{
  const db=database();const id=crypto.randomUUID();const token=crypto.randomUUID()+crypto.randomUUID();
  const result=await db.prepare('INSERT INTO waitlist (id,email,manage_token,consent_version,created_at) VALUES (?,?,?,?,?) ON CONFLICT(email) DO UPDATE SET manage_token=excluded.manage_token, consent_version=excluded.consent_version, created_at=excluded.created_at, unsubscribed_at=NULL, interest=NULL, interest_updated_at=NULL WHERE waitlist.unsubscribed_at IS NOT NULL').bind(id,email,token,'waitlist-v1',Date.now()).run();
  if(result.meta.changes>0)return json({ok:true,canAnswer:true},201,{'Set-Cookie':cookie(token,new URL(request.url).protocol==='https:')});
- const previous=getToken(request);const owned=previous?await db.prepare('SELECT id FROM waitlist WHERE email=? AND manage_token=? AND unsubscribed_at IS NULL').bind(email,previous).first():null;
- return json({ok:true,canAnswer:!!owned});
+ const previous=getToken(request);const owned=previous?await db.prepare('SELECT id,interest FROM waitlist WHERE email=? AND manage_token=? AND unsubscribed_at IS NULL').bind(email,previous).first<{id:string;interest:string|null}>():null;
+ return json({ok:true,canAnswer:!!owned,interest:owned?.interest??null});
  }catch(error){return failure(error);}}
